@@ -1,0 +1,61 @@
+.btn-home {
+  color: #fff;
+  cursor: pointer;
+  display: block;
+  font-size:24px;
+  font-weight: 400;
+  line-height: 45px;
+  margin: 0 auto 2em;
+  max-width: 160px;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+  vertical-align: middle;
+  width: 100%;
+
+
+  &:hover { text-decoration: none; }
+
+}
+
+.btn-2 {
+    letter-spacing: 0;
+    box-sizing: inherit;
+  transition-property: all;
+  transition-duration: .6s;
+  transition-timing-function: ease;
+}
+
+.btn-2:hover,
+.btn-2:active {
+  letter-spacing: 5px;
+  color: #fff;
+}
+
+.btn-2:after,
+.btn-2:before {
+  border: 1px solid rgba(#fff, 0);
+  bottom: 0px;
+  content: " ";
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  transition: all 280ms ease-in-out;
+  width: 0;
+  color: #fff;
+}
+
+.btn-2:hover:after,
+.btn-2:hover:before {
+  border-color: #fff;
+  transition: width 350ms ease-in-out;
+  width: 70%;
+  color: #fff;
+}
+
+.btn-2:hover:before {
+  bottom: auto;
+  top: 0;
+  width: 70%;
+  color: #fff;
+}
