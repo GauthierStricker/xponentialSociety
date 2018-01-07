@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  topics: 
+  duration: MyString
+  rating: 1
+  speaker: MyString
+  source: MyString
+  publisher: MyString
+  views: 1
+  contributor: MyString
+  added_date: MyString
+  language: MyString
+  original_date: MyString
+
+two:
+  title: MyString
+  topics: 
+  duration: MyString
+  rating: 1
+  speaker: MyString
+  source: MyString
+  publisher: MyString
+  views: 1
+  contributor: MyString
+  added_date: MyString
+  language: MyString
+  original_date: MyString
