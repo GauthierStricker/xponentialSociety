@@ -10,10 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180107135935) do
+ActiveRecord::Schema.define(version: 20180107151418) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "topics", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "topics_videos", force: :cascade do |t|
+    t.bigint "topic_id"
+    t.bigint "video_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["topic_id"], name: "index_topics_videos_on_topic_id"
+    t.index ["video_id"], name: "index_topics_videos_on_video_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -32,4 +47,22 @@ ActiveRecord::Schema.define(version: 20180107135935) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "videos", force: :cascade do |t|
+    t.string "title"
+    t.string "duration"
+    t.integer "rating"
+    t.string "speaker"
+    t.string "source"
+    t.string "publisher"
+    t.integer "views"
+    t.string "contributor"
+    t.string "added_date"
+    t.string "language"
+    t.string "original_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "topics_videos", "topics"
+  add_foreign_key "topics_videos", "videos"
 end
