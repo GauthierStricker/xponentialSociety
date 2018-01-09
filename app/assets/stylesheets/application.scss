@@ -13,3 +13,16 @@
 @import "layouts/index";
 @import "components/index";
 @import "pages/index";
+
+// Body Basic
+body {
+  font-family: 'Merriweather Sans', sans-serif;
+  background: #21212B;
+  position: absolute;
+  font-weight: lighter;
+  color: #B7B8CE;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}

@@ -1,2 +1,20 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner" style="background-image: radial-gradient(ellipse at center, rgba(173,95,0,0.3) 0%, rgba(138,76,0,0.3) 50%), url('<%= asset_path "banner-home-photo.jpg"  %>');">
+  <div class="banner-content">
+    <div class="container">
+      <div class="row">
+          <div class="col-xs-12 col-sm-12 col-lg-12">
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <h1>Curated <strong>Video Content</strong></h1>
+            <h3>for an <strong>exponential</strong> world</h3>
+            <br>
+            <br>
+            <p><%= link_to 'Enter', videos_path, class: "btn-home btn-2" %></p>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
