@@ -1,9 +1,32 @@
 .content-area-container {
-  display: flex;
-  justify-content: space-around;
+  // display: flex;
+  // justify-content: space-around;
   background: #21212a;
   width: 80vw;
   right: 0;
-  height: 100vh;
+  height: auto;
   position:absolute;
+}
+
+.content-area-header {
+  width: 80vw;
+  right: 0;
+  background-size: cover;
+  height: 20vh;
+  background-position: center;
+  font-size: 50px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.content-area-title {
+  font-weight: bolder;
+  font-size:40px;
+  text-align: center;
+}
+
+.content-area-videos {
+  padding-left:30px;
+  padding-right: 30px;
 }

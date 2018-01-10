@@ -1,6 +1,7 @@
 class VideosController < ApplicationController
   def index         # GET /videos
     @videos = Video.all
+    @topics = "Latest videos"
   end
 
   def show          # GET /videos/:id
