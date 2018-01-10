@@ -10,59 +10,32 @@
       </div>
     </div>
   </div>
-  <div class="row">
-    <div class="col-xs-12 col-lg-6">
-      <div class="categories-bar-card">
-        <%= link_to root_path do %>
-          <%= image_tag "3d-printing-icon.png", class: "categories-bar-icon" %>
-          <p class="categories-bar-card-link">3D-Printing</p>
-        <% end %>
-      </div>
-    </div>
-    <div class="col-xs-12 col-lg-6">
-      <div class="categories-bar-card">
-        <%= link_to root_path do %>
-          <%= image_tag "biotech-icon.png", class: "categories-bar-icon" %>
-          <p class="categories-bar-card-link">Biotech</p>
-        <% end %>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-xs-12 col-lg-6">
-      <div class="categories-bar-card">
-        <%= link_to root_path do %>
-          <%= image_tag "robotics-icon.png", class: "categories-bar-icon" %>
-          <p class="categories-bar-card-link">Robotics</p>
-        <% end %>
-      </div>
-    </div>
-    <div class="col-xs-12 col-lg-6">
-      <div class="categories-bar-card">
-        <%= link_to root_path do %>
-          <%= image_tag "prospective-icon.png", class: "categories-bar-icon" %>
-          <p class="categories-bar-card-link">Prospective</p>
-        <% end %>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-xs-12 col-lg-6">
-      <div class="categories-bar-card">
-        <%= link_to root_path do %>
-          <%= image_tag "ai-icon.png", class: "categories-bar-icon" %>
-          <p class="categories-bar-card-link">AI</p>
-        <% end %>
-      </div>
-    </div>
-    <div class="col-xs-12 col-lg-6">
-      <div class="categories-bar-card">
-        <%= link_to root_path do %>
-          <%= image_tag "crypto-icon.png", class: "categories-bar-icon" %>
-          <p class="categories-bar-card-link">Crypto</p>
-        <% end %>
-      </div>
-    </div>
+  <% @topics = Topic.all %>
+    <% new_row_tracker = 0 %>
+    <% @topics.each do |topic| %>
+      <% if new_row_tracker.even? %>
+        <div class="row">
+          <div class="col-xs-12 col-lg-6">
+            <div class="categories-bar-card">
+              <%= link_to(topic_path(topic.id)) do %>
+                <%= image_tag "3d-printing-icon.png", class: "categories-bar-icon" %>
+                <p class="categories-bar-card-link"><%= topic.name %></p>
+              <% end %>
+            </div>
+          </div>
+      <% else  %>
+          <div class="col-xs-12 col-lg-6">
+            <div class="categories-bar-card">
+              <%= link_to(topic_path(topic.id)) do %>
+                <%= image_tag "3d-printing-icon.png", class: "categories-bar-icon" %>
+                <p class="categories-bar-card-link"><%= topic.name %></p>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+      <% new_row_tracker += 1 %>
+    <% end %>
   </div>
   <hr>
 </div>
