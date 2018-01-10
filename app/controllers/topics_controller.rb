@@ -6,6 +6,7 @@ class TopicsController < ApplicationController
   def show          # GET /topics/:id
     @topic = Topic.find(params[:id])
     @videos = @topic.videos
+    @videos.reverse
   end
 
   private

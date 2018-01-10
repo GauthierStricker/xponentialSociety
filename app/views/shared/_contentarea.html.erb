@@ -10,66 +10,73 @@
     <div class="row">
       <div class="col-lg-8">
         <div class="video-card">
-          <div class="video-card-cover-top" style="background-image:linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%), radial-gradient(ellipse at center, rgba(173,95,0,0.3) 0%, rgba(138,76,0,0.3) 50%), url('<%= asset_path "video-bk-test.png"  %>');">
-            <p class="video-card-top-title">Tech Trends 2017: Exponential technology trends to watch</p>
+          <%= link_to(video_path(@videos.first.id)) do %>
+          <div class="video-card-cover-top" style="background-image:linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%), radial-gradient(ellipse at center, rgba(173,95,0,0.3) 0%, rgba(138,76,0,0.3) 50%), url('<%= cl_image_path @videos.first.photo, height: 300, width: 400, crop: :fill %>')">
+            <p class="video-card-top-title"><%= @videos.first.title %></p>
           </div>
+          <% end %>
         </div>
       </div>
 
       <div class="col-lg-4">
         <div class="video-card">
-          <div class="video-card-cover" style="background-image: radial-gradient(ellipse at center, rgba(173,95,0,0.3) 0%, rgba(138,76,0,0.3) 50%), url('<%= asset_path "video-bk-test.png"  %>');">
-            <div class="video-card-duration-box">10:21</div>
+          <%= link_to(video_path(@videos[1].id)) do %>
+          <div class="video-card-cover" style="background-image: radial-gradient(ellipse at center, rgba(173,95,0,0.3) 0%, rgba(138,76,0,0.3) 50%), url('<%= cl_image_path @videos[1].photo, height: 300, width: 400, crop: :fill %>');">
+            <div class="video-card-duration-box"><%= @videos[1].duration %></div>
           </div>
           <div class="video-card-sub">
-            <p class="video-card-sub-title">Tech Trends 2017: Exponential technology trends to watch</p>
+            <p class="video-card-sub-title"><%= @videos[1].title %></p>
           </div>
+        <% end %>
         </div>
       </div>
     </div>
-    <div class="row">
-      <div class="col-lg-4">
-        <div class="video-card">
-          <div class="video-card-cover" style="background-image: radial-gradient(ellipse at center, rgba(173,95,0,0.3) 0%, rgba(138,76,0,0.3) 50%), url('<%= asset_path "video-bk-test.png"  %>');">
-            <div class="video-card-duration-box">10:21</div>
+
+    <% new_row_tracker = 0 %>
+    <% @videos.each_with_index do |video, index|  %>
+      <% unless index == 0 || index == 1  %>
+        <% if (new_row_tracker % 3) == 0 %>
+          <div class="row">
+            <div class="col-lg-4">
+              <div class="video-card">
+                <%= link_to(video_path(video.id)) do %>
+                <div class="video-card-cover" style="background-image: radial-gradient(ellipse at center, rgba(173,95,0,0.3) 0%, rgba(138,76,0,0.3) 50%), url('<%= cl_image_path video.photo, height: 300, width: 400, crop: :fill %>');">
+                  <div class="video-card-duration-box"><%= video.duration %></div>
+                </div>
+                <div class="video-card-sub">
+                  <p class="video-card-sub-title"><%= video.title %></p>
+                </div>
+                <% end %>
+              </div>
+            </div>
+        <% else %>
+            <div class="col-lg-4">
+              <div class="video-card">
+                <%= link_to(video_path(video.id)) do %>
+                <div class="video-card-cover" style="background-image: radial-gradient(ellipse at center, rgba(173,95,0,0.3) 0%, rgba(138,76,0,0.3) 50%), url('<%= cl_image_path video.photo, height: 300, width: 400, crop: :fill %>');">
+                  <div class="video-card-duration-box"><%= video.duration %></div>
+                </div>
+                <div class="video-card-sub">
+                  <p class="video-card-sub-title"><%= video.title %></p>
+                </div>
+                <% end %>
+              </div>
+            </div>
+          <% closing_div_tester = new_row_tracker + 1 %>
+          <% if (closing_div_tester % 3) == 0 %>
           </div>
-          <div class="video-card-sub">
-            <p class="video-card-sub-title">Tech Trends 2017: Exponential technology trends to watch</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4">
-        <div class="video-card">
-          <div class="video-card-cover" style="background-image: radial-gradient(ellipse at center, rgba(173,95,0,0.3) 0%, rgba(138,76,0,0.3) 50%), url('<%= asset_path "video-bk-test.png"  %>');">
-            <div class="video-card-duration-box">10:21</div>
-          </div>
-          <div class="video-card-sub">
-            <p class="video-card-sub-title">Tech Trends 2017: Exponential technology trends to watch</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4">
-        <div class="video-card">
-          <div class="video-card-cover" style="background-image: radial-gradient(ellipse at center, rgba(173,95,0,0.3) 0%, rgba(138,76,0,0.3) 50%), url('<%= asset_path "video-bk-test.png"  %>');">
-            <div class="video-card-duration-box">10:21</div>
-          </div>
-          <div class="video-card-sub">
-            <p class="video-card-sub-title">Tech Trends 2017: Exponential technology trends to watch</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-lg-4">
-        <div class="video-card">
-          <div class="video-card-cover" style="background-image: radial-gradient(ellipse at center, rgba(173,95,0,0.3) 0%, rgba(138,76,0,0.3) 50%), url('<%= asset_path "video-bk-test.png"  %>');">
-            <div class="video-card-duration-box">10:21</div>
-          </div>
-          <div class="video-card-sub">
-            <p class="video-card-sub-title">Tech Trends 2017: Exponential technology trends to watch</p>
-          </div>
-        </div>
-      </div>
+          <% end  %>
+        <% end %>
+        <% new_row_tracker += 1 %>
+      <% end %>
+    <% end %>
+
+
+
+
+
+    <!--
+
       <div class="col-lg-4">
         <div class="video-card">
           <div class="video-card-cover" style="background-image: radial-gradient(ellipse at center, rgba(173,95,0,0.3) 0%, rgba(138,76,0,0.3) 50%), url('<%= asset_path "video-bk-test.png"  %>');">
@@ -192,6 +199,6 @@
           <p>Video Title</p>
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
 </div>

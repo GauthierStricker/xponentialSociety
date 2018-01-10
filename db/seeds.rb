@@ -64,3 +64,102 @@ puts "seeding Topics"
   topic.save!
 
 puts "Topics seeded"
+
+  video = Video.new
+  video.title = "1th World Internet Conference"
+  video.duration = "34:21"
+  video.rating = 4
+  video.speaker = "Peter Diamandis"
+  video.source = ""
+  video.publisher = "WEF"
+  video.views = 3
+  video.source = "youtube"
+  video.link = ""
+  video.remote_photo_url = "https://qzprod.files.wordpress.com/2017/12/tim-cook-wuzhen.jpg"
+  video.topics << Topic.find(1)
+  video.save
+
+  video = Video.new
+  video.title = "Not a video about AI"
+  video.duration = "23:22"
+  video.rating = 4
+  video.speaker = "Peter Diamandis"
+  video.source = ""
+  video.publisher = "WEF"
+  video.views = 3
+  video.source = "youtube"
+  video.link = ""
+  video.remote_photo_url = "https://qzprod.files.wordpress.com/2017/12/tim-cook-wuzhen.jpg"
+  video.save
+
+  video = Video.new
+  video.title = "2th World Internet Conference"
+  video.duration = "36:23"
+  video.rating = 4
+  video.speaker = "Peter Diamandis"
+  video.source = ""
+  video.publisher = "WEF"
+  video.views = 3
+  video.source = "youtube"
+  video.link = ""
+  video.remote_photo_url = "https://qzprod.files.wordpress.com/2017/12/tim-cook-wuzhen.jpg"
+  video.topics << Topic.find(1)
+  video.save
+
+  video = Video.new
+  video.title = "3th World Internet Conference"
+  video.duration = "37:23"
+  video.rating = 4
+  video.speaker = "Peter Diamandis"
+  video.source = ""
+  video.publisher = "WEF"
+  video.views = 3
+  video.source = "youtube"
+  video.link = ""
+  video.remote_photo_url = "https://qzprod.files.wordpress.com/2017/12/tim-cook-wuzhen.jpg"
+  video.topics << Topic.find(1)
+  video.save
+
+  video = Video.new
+  video.title = "4th World Internet Conference"
+  video.duration = "45:32"
+  video.rating = 4
+  video.speaker = "Peter Diamandis"
+  video.source = ""
+  video.publisher = "WEF"
+  video.views = 3
+  video.source = "youtube"
+  video.link = ""
+  video.remote_photo_url = "https://qzprod.files.wordpress.com/2017/12/tim-cook-wuzhen.jpg"
+  video.topics << Topic.find(1)
+  video.save
+
+  video = Video.new
+  video.title = "5th World Internet Conference"
+  video.duration = "31:22"
+  video.rating = 4
+  video.speaker = "Peter Diamandis"
+  video.source = ""
+  video.publisher = "WEF"
+  video.views = 3
+  video.source = "youtube"
+  video.link = ""
+  video.remote_photo_url = "https://qzprod.files.wordpress.com/2017/12/tim-cook-wuzhen.jpg"
+  video.topics << Topic.find(1)
+  video.save
+
+  video = Video.new
+  video.title = "6th World Internet Conference"
+  video.duration = "54:23"
+  video.rating = 4
+  video.speaker = "Peter Diamandis"
+  video.source = ""
+  video.publisher = "WEF"
+  video.views = 3
+  video.source = "youtube"
+  video.link = ""
+  video.remote_photo_url = "https://qzprod.files.wordpress.com/2017/12/tim-cook-wuzhen.jpg"
+  video.topics << Topic.find(1)
+  video.save
+
+puts "Videos seeded"

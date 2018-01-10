@@ -64,7 +64,7 @@ ActiveRecord::Schema.define(version: 20180110134920) do
     t.string "original_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "cover"
+    t.string "photo"
     t.string "link"
   end
 
