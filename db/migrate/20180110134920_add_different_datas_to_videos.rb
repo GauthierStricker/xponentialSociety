@@ -1,0 +1,6 @@
+class AddDifferentDatasToVideos < ActiveRecord::Migration[5.1]
+  def change
+    add_column :videos, :cover, :string
+    add_column :videos, :link, :string
+  end
+end

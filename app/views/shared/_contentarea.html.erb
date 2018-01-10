@@ -1,6 +1,10 @@
 <div class="content-area-container">
-  <div class="content-area-header" style="background-image: radial-gradient(ellipse at center, rgba(173,95,0,0.3) 0%, rgba(138,76,0,0.3) 50%), url('<%= asset_path "vr-header.png"  %>');">
+  <% if @topic != nil %>
+  <div class="content-area-header" style="background-image: radial-gradient(ellipse at center, rgba(173,95,0,0.3) 0%, rgba(138,76,0,0.3) 50%), url('<%= asset_path "#{@topic.header_asset}"  %>');"></div>
+  <% else %>
+  <div class="content-area-header" style="background-image: radial-gradient(ellipse at center, rgba(173,95,0,0.3) 0%, rgba(138,76,0,0.3) 50%), url('<%= asset_path "main-header.png"  %>');">
   </div>
+  <% end %>
     <br>
   <div class="content-area-videos">
     <div class="row">
