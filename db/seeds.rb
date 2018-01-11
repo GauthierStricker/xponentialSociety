@@ -75,6 +75,7 @@ puts "Topics seeded"
   video.views = 3
   video.source = "youtube"
   video.link = ""
+  video.youtube_id = "QN9UOkN-LWE"
   video.remote_photo_url = "https://qzprod.files.wordpress.com/2017/12/tim-cook-wuzhen.jpg"
   video.topics << Topic.find(1)
   video.save
@@ -89,6 +90,7 @@ puts "Topics seeded"
   video.views = 3
   video.source = "youtube"
   video.link = ""
+  video.youtube_id = "1C7XZbT-5jU"
   video.remote_photo_url = "https://qzprod.files.wordpress.com/2017/12/tim-cook-wuzhen.jpg"
   video.save
 

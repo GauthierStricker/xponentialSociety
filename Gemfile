@@ -22,6 +22,7 @@ gem 'pundit'
 gem 'carrierwave', '~> 1.2'
 
 
+
 group :development do
   gem 'web-console', '>= 3.3.0'
   gem 'better_errors'
