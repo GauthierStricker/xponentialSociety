@@ -31,14 +31,22 @@
 }
 .videoWrapper iframe, .videoWrapper object, .videoWrapper embed {
   position: absolute;
-  top: 1.25%;
-  left: 1.25%;
-  width: 97.5%;
-  height: 97.5%;
+  top: 2%;
+  left: 2%;
+  width: 96%;
+  height: 96%;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
 }
 
 .video-sub-container {
   background: #353740;
+  height: 100px;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  padding: 30px;
 }
 
 
