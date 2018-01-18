@@ -10,7 +10,7 @@
       </div>
     </div>
   </div>
-  <% @topics = Topic.first(4) %>
+  <% @topics = Topic.all %>
     <% new_row_tracker = 0 %>
     <% @topics.each do |topic| %>
       <% if new_row_tracker.even? %>
@@ -36,36 +36,7 @@
       <% end %>
       <% new_row_tracker += 1 %>
     <% end %>
-    <div class="centered-div"><p id="expand-categories">+</p></div>
+    <div class="centered-div"><p id="unexpand-categories">-</p></div>
     <hr>
   </div>
 </div>
-<script>
-
-function unexpand() {
-const unexpandCategories = document.getElementById("unexpand-categories");
-  unexpandCategories.addEventListener("click", (event) => {
-    console.log("event");
-    console.log(event);
-    console.log(event.currentTarget);
-    categories.innerHTML = content;
-    expand();
-});
-};
-
-function expand() {
-  const expandCategories = document.getElementById("expand-categories");
-  expandCategories.addEventListener("click", (event) => {
-    console.log("event");
-    console.log(event);
-    console.log(event.currentTarget);
-    var categories = document.getElementById("categories");
-    content = categories.innerHTML
-    categories.innerHTML = "<%= j (render 'shared/categoriesbarexpanded') %>";
-    unexpand();
-});
-};
-
-expand();
-
-</script>

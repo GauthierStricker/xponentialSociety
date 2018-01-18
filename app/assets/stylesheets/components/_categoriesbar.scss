@@ -51,5 +51,42 @@
   border:1px solid #5e5e63;
   background-color:#292c35;
 }
+.centered-div {
+  display:flex;
+  width:100%;
+  justify-content:center;
+}
 
+#expand-categories {
+  border-radius:50%;
+  background: #353740;
+  width:21px;
+  height:21px;
+  display:flex;
+  align-items: center;
+  justify-content:center;
+}
 
+#expand-categories:hover {
+  border:1px solid #5e5e63;
+  background-color:#292c35;
+}
+
+#unexpand-categories {
+  border-radius:50%;
+  background: #353740;
+  width:21px;
+  height:21px;
+  display:flex;
+  align-items: center;
+  justify-content:center;
+}
+
+#unexpand-categories:hover {
+  border:1px solid #5e5e63;
+  background-color:#292c35;
+}
+
+hr {
+  margin-top: 10px;
+}
