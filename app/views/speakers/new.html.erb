@@ -1,0 +1,9 @@
+<div style="padding:10%;">
+  <p><strong>ADD A NEW SPEAKER</strong></p>
+  <%= simple_form_for(@speaker) do |f| %>
+  <%= f.input :name, as: :string%>
+  <%= f.input :biography_link, as: :string%>
+  <%= f.input :profile_picture%>
+  <%= f.submit "Create a new speaker", class: "btn btn-primary" %>
+<% end %>
+</div>
