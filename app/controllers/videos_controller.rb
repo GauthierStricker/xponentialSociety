@@ -14,10 +14,10 @@ class VideosController < ApplicationController
   end
 
   def create        # POST /videos
-    @video = Video.new(article_params)
+    @video = Video.new(video_params)
 
     if @video.save
-      redirect_to @video
+      redirect_to video_path(@video)
     else
       render 'new'
     end
@@ -30,7 +30,7 @@ class VideosController < ApplicationController
   def update        # PATCH /videos/:id
     @video = Video.find(params[:id])
 
-    if @video.update(article_params)
+    if @video.update(video_params)
       redirect_to @video
     else
       render 'edit'
@@ -47,6 +47,6 @@ class VideosController < ApplicationController
   private
 
   def video_params
-    params.require(:video).permit(:photo)
+    params.require(:video).permit(:title, :duration, :publisher, :publisher_link, :speaker_id, :source, :contributor, :language, :youtube_id, :format, :link, :photo, :original_date, :topic_ids => [])
   end
 end
