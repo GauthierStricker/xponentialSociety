@@ -7,6 +7,7 @@ class ProfilePictureUploader < CarrierWave::Uploader::Base
 
   version :thumnail do
     resize_to_fit 150, 150
+  end
 
   # Remove everything else
 end

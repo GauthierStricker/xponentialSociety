@@ -15,10 +15,10 @@
       </div>
       <br>
       <div class="video-sub-container">
-        <div><%= image_tag("jason-silva.png", size: "150x150", alt: "Speaker Photo", class: "speaker-photo") %></div>
+        <div class="speaker-photo"><%= cl_image_tag @video.speaker.profile_picture, height: 150, width: 150, alt: "Speaker Photo"%></div>
         <p class="title"><%=@video.title%></p>
-        <p><span class="format">Interview</span>      ·      Dec. 2017      ·     English</p>
-        <p> <span class="format">Speaker</span> : Jason Silva ·<span class="format">Original Publisher</span> : Shots of Awe</p>
+        <p><span class="format"><%=@video.format%></span>      ·      <%= @video.original_date %>      ·     <%= @video.language %></p>
+        <p> <span class="format">Speaker</span> : <%= link_to @video.speaker.name, @video.speaker.biography_link, :target => "_blank" %> ·<span class="format">Original Publisher</span> : <%= link_to @video.publisher, @video.publisher_link, :target => "_blank" %></p>
         <br>
         <br>
         <br>

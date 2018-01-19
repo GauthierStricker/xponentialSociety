@@ -10,14 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180119113659) do
+ActiveRecord::Schema.define(version: 20180119151310) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "speakers", force: :cascade do |t|
     t.string "name"
-    t.string "wikipedia"
     t.string "profile_picture"
     t.string "biography_link"
     t.datetime "created_at", null: false
@@ -84,6 +83,8 @@ ActiveRecord::Schema.define(version: 20180119113659) do
     t.string "link"
     t.string "youtube_id"
     t.bigint "speaker_id"
+    t.string "format"
+    t.string "publisher_link"
     t.index ["speaker_id"], name: "index_videos_on_speaker_id"
   end
 

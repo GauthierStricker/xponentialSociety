@@ -4,7 +4,6 @@ class CreateVideos < ActiveRecord::Migration[5.1]
       t.string :title
       t.string :duration
       t.integer :rating
-      t.string :speaker
       t.string :source
       t.string :publisher
       t.integer :views

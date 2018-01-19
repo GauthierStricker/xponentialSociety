@@ -78,6 +78,16 @@
     font-size:12px;
     padding-bottom:3px;
   }
+  a {
+    font-weight: lighter;
+    color: #B7B8CE;
+    text-decoration: none;
+  }
+  a:hover
+  {
+    text-decoration: none;
+    color:white;
+  }
 }
 
 .video-tag-top-information {
