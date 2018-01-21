@@ -1,0 +1,14 @@
+<div style="padding:10%;">
+  <p><strong>EDIT TOPIC</strong></p>
+
+  <p>ATTENTION - Rajouter la source de l'auteur si l'icone et/ou l'image ne sont pas sous licence full-open</p>
+  <%= simple_form_for(@topic) do |f| %>
+  <%= f.input :name%>
+  <%= f.input :short_name %>
+  <%= f.input :icon_asset%>
+  <%= cl_image_tag @topic.icon_asset, height: 150, width: 150, alt: "Icon Asset"%>
+  <%= f.input :header_asset%>
+  <%= cl_image_tag @topic.header_asset, height: 150, width: 150, alt: "Header Asset"%>
+  <%= f.submit "EDIT topic", class: "btn btn-primary" %>
+<% end %>
+</div>

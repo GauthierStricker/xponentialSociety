@@ -1,6 +1,7 @@
 class VideosController < ApplicationController
   def index         # GET /videos
     @videos = Video.all
+    @videos = @videos.reverse
     @topics = "Latest videos"
   end
 
@@ -31,7 +32,7 @@ class VideosController < ApplicationController
     @video = Video.find(params[:id])
 
     if @video.update(video_params)
-      redirect_to @video
+      redirect_to video_path(@video)
     else
       render 'edit'
     end
