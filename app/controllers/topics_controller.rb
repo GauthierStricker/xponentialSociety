@@ -9,29 +9,33 @@ class TopicsController < ApplicationController
     @videos = @videos.reverse
   end
   def new           # GET /topics/new
+    authorize Topic
     @topic = Topic.new
 
   end
 
   def create        # POST /topics
     @topic = Topic.new(topic_params)
+    authorize Topic
 
     if @topic.save
-      redirect_to @videos
+      redirect_to videos_path
     else
       render 'new'
     end
   end
 
   def edit          # GET /topics/:id/edit
+    authorize Topic
     @topic = Topic.find(params[:id])
   end
 
   def update        # PATCH /topics/:id
+    authorize Topic
     @topic = Topic.find(params[:id])
 
     if @topic.update(topic_params)
-      redirect_to @topic
+      redirect_to videos_path
     else
       render 'edit'
     end

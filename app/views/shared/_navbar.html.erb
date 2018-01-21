@@ -6,6 +6,11 @@
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
+      <% if current_user.try(:admin?) %>
+        <%= link_to "Add video ", new_video_path, class: "navbar-wagon-item navbar-wagon-link" %>
+        <%= link_to "Add speaker ", new_speaker_path, class: "navbar-wagon-item navbar-wagon-link" %>
+        <%= link_to "Add topic ", new_topic_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <% end %>
       <%= link_to "Contribute", "#", class: "navbar-wagon-item navbar-wagon-link" %>
   </div>
 

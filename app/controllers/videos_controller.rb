@@ -1,3 +1,4 @@
+
 class VideosController < ApplicationController
   def index         # GET /videos
     @videos = Video.all
@@ -10,13 +11,14 @@ class VideosController < ApplicationController
   end
 
   def new           # GET /videos/new
+    authorize Video
     @video = Video.new
 
   end
 
   def create        # POST /videos
     @video = Video.new(video_params)
-
+    authorize Video
     if @video.save
       redirect_to video_path(@video)
     else
@@ -25,12 +27,13 @@ class VideosController < ApplicationController
   end
 
   def edit          # GET /videos/:id/edit
+    authorize Video
     @video = Video.find(params[:id])
   end
 
   def update        # PATCH /videos/:id
     @video = Video.find(params[:id])
-
+    authorize Video
     if @video.update(video_params)
       redirect_to video_path(@video)
     else
@@ -39,6 +42,7 @@ class VideosController < ApplicationController
   end
 
   def destroy       # DELETE /videos/:id
+    authorize Video
     @video = Video.find(params[:id])
     @video.destroy
 
