@@ -23,6 +23,8 @@ gem 'carrierwave', '~> 1.2'
 
 gem "cocoon"
 
+gem 'mail_form'
+
 
 group :development do
   gem 'web-console', '>= 3.3.0'
