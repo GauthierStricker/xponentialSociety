@@ -1,0 +1,12 @@
+<div style="padding:10%;">
+  <p><strong>ADD A NEW TOPIC</strong></p>
+
+  <p>ATTENTION - Rajouter la source de l'auteur si l'icone et/ou l'image ne sont pas sous licence full-open</p>
+  <%= simple_form_for(@topic) do |f| %>
+  <%= f.input :name%>
+  <%= f.input :short_name %>
+  <%= f.input :icon_asset%>
+  <%= f.input :header_asset%>
+  <%= f.submit "Create a new topic", class: "btn btn-primary" %>
+<% end %>
+</div>

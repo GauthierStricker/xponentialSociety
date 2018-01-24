@@ -1,0 +1,20 @@
+<div style="padding:10%;">
+  <p><strong>EDIT VIDEO</strong></p>
+  <%= simple_form_for(@video) do |f| %>
+  <%= f.input :title, as: :string, label: 'Video Title' %>
+  <%= f.input :duration, as: :string, label: 'Duration - ex : 23:25' %>
+  <%= f.input :publisher, as: :string, label: 'Original Publisher - ex: Deloitte' %>
+  <%= f.input :publisher_link, as: :string, label: 'Link - ex: Youtube channel, website, etc.' %>
+  <%= f.association :topics, as: :check_boxes %>
+  <%= f.association :speaker %>
+  <%= f.input :source, as: :string, label: 'Source -ex: Youtube' %>
+  <%= f.input :contributor, as: :string %>
+  <%= f.input :language, as: :string, label: 'Language (in english)' %>
+  <%= f.input :original_date, as: :string %>
+  <%= f.input :photo, label: 'Photo Cover'%>
+  <%= f.input :youtube_id, as: :string, label: 'exemple : GusbUCKM9vI ' %>
+  <%= f.input :format, as: :string, label: 'exemple : Conference ' %>
+  <%= f.input :link, label: 'exemple : https://www.youtube.com/embed/GusbUCKM9vI' %>
+  <%= f.submit "Edit video", class: "btn btn-primary" %>
+<% end %>
+</div>

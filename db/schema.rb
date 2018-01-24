@@ -10,15 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180107151418) do
+ActiveRecord::Schema.define(version: 20180121173600) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "speakers", force: :cascade do |t|
+    t.string "name"
+    t.string "profile_picture"
+    t.string "biography_link"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "topics", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "icon_asset"
+    t.string "short_name"
+    t.string "header_asset"
   end
 
   create_table "topics_videos", force: :cascade do |t|
@@ -28,6 +39,13 @@ ActiveRecord::Schema.define(version: 20180107151418) do
     t.datetime "updated_at", null: false
     t.index ["topic_id"], name: "index_topics_videos_on_topic_id"
     t.index ["video_id"], name: "index_topics_videos_on_video_id"
+  end
+
+  create_table "tracks", force: :cascade do |t|
+    t.string "name"
+    t.string "total_duration"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -43,6 +61,7 @@ ActiveRecord::Schema.define(version: 20180107151418) do
     t.inet "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "admin"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -51,7 +70,6 @@ ActiveRecord::Schema.define(version: 20180107151418) do
     t.string "title"
     t.string "duration"
     t.integer "rating"
-    t.string "speaker"
     t.string "source"
     t.string "publisher"
     t.integer "views"
@@ -61,8 +79,16 @@ ActiveRecord::Schema.define(version: 20180107151418) do
     t.string "original_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "photo"
+    t.string "link"
+    t.string "youtube_id"
+    t.bigint "speaker_id"
+    t.string "format"
+    t.string "publisher_link"
+    t.index ["speaker_id"], name: "index_videos_on_speaker_id"
   end
 
   add_foreign_key "topics_videos", "topics"
   add_foreign_key "topics_videos", "videos"
+  add_foreign_key "videos", "speakers"
 end

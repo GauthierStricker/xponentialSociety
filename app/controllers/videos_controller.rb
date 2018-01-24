@@ -1,6 +1,9 @@
+
 class VideosController < ApplicationController
   def index         # GET /videos
     @videos = Video.all
+    @videos = @videos.reverse
+    @topics = "Latest videos"
   end
 
   def show          # GET /videos/:id
@@ -8,35 +11,38 @@ class VideosController < ApplicationController
   end
 
   def new           # GET /videos/new
+    authorize Video
     @video = Video.new
 
   end
 
   def create        # POST /videos
-    @video = Video.new(article_params)
-
+    @video = Video.new(video_params)
+    authorize Video
     if @video.save
-      redirect_to @video
+      redirect_to video_path(@video)
     else
       render 'new'
     end
   end
 
   def edit          # GET /videos/:id/edit
+    authorize Video
     @video = Video.find(params[:id])
   end
 
   def update        # PATCH /videos/:id
     @video = Video.find(params[:id])
-
-    if @video.update(article_params)
-      redirect_to @video
+    authorize Video
+    if @video.update(video_params)
+      redirect_to video_path(@video)
     else
       render 'edit'
     end
   end
 
   def destroy       # DELETE /videos/:id
+    authorize Video
     @video = Video.find(params[:id])
     @video.destroy
 
@@ -46,6 +52,6 @@ class VideosController < ApplicationController
   private
 
   def video_params
-    params.require(:video).permit()
+    params.require(:video).permit(:title, :duration, :publisher, :publisher_link, :speaker_id, :source, :contributor, :language, :youtube_id, :format, :link, :photo, :original_date, :topic_ids => [])
   end
 end

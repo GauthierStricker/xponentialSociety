@@ -1,0 +1,38 @@
+<div class="content-area-container">
+  <div class="content-area-header" style="background-image: radial-gradient(ellipse at center, rgba(173,95,0,0.3) 0%, rgba(138,76,0,0.3) 50%), url('<%= asset_path "video-header.png"  %>');"></div>
+  <div class="video-displayer-area">
+    <div class="video-global-container">
+      <% @video.topics.each do |topic| %>
+        <div class="video-tag-top-information"><%= topic.name %></div>
+      <%end %>
+      <br>
+      <!-- <p class="video-title-top-information"><%=@video.title %></p> -->
+      <br>
+      <div class="video-container">
+        <div class="videoWrapper">
+          <iframe src='https://www.youtube.com/embed/<%= @video.youtube_id %>?rel=0&autoplay=<%= params[:autoplay] || 0 %>' frameborder='0' allowfullscreen></iframe>
+        </div>
+      </div>
+      <br>
+      <div class="video-sub-container">
+        <div class="speaker-photo"><%= cl_image_tag @video.speaker.profile_picture, height: 150, width: 150, alt: "Speaker Photo"%></div>
+        <p class="title"><%=@video.title%></p>
+        <p><span class="format"><%=@video.format%></span>      ·      <%= @video.original_date %>      ·     <%= @video.language %></p>
+        <p> <span class="format">Speaker</span> : <%= link_to @video.speaker.name, @video.speaker.biography_link, :target => "_blank" %> ·<span class="format">Original Publisher</span> : <%= link_to @video.publisher, @video.publisher_link, :target => "_blank" %></p>
+        <br>
+        <br>
+        <br>
+        <br>
+        <i class="source fa fa-youtube fa-4x" aria-hidden="true"></i>
+      </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+  </div>
+</div>

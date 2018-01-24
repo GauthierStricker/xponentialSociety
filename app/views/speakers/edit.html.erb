@@ -1,0 +1,11 @@
+<div style="padding:10%;">
+  <p><strong>EDIT SPEAKER</strong></p>
+  <p>La photo doit être dans un format 1:1 (rendu final - 150px150px</p>
+  <%= simple_form_for(@speaker) do |f| %>
+  <%= f.input :name, as: :string%>
+  <%= f.input :biography_link, as: :string%>
+  <%= f.input :profile_picture%>
+  <%= cl_image_tag @speaker.profile_picture, height: 150, width: 150, alt: "Speaker Photo"%>
+  <%= f.submit "Edit speaker", class: "btn btn-primary" %>
+<% end %>
+</div>
