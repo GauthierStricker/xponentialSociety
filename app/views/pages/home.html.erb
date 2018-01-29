@@ -1,4 +1,4 @@
-<div class="banner">
+<!-- <div class="banner">
   <div class="banner-content">
     <%= video_tag "video-home.mp4", autoplay: :autoplay, loop: :loop, mute: :mute, class: "video" %>
     <div class="container">
@@ -21,3 +21,134 @@
     </div>
   </div>
 </div>
+ -->
+<div class="bg"></div>
+<header>
+   <div class="content">
+            <%= image_tag "xponential-society-logo.png" %>
+            <h1>Curated Video Content</h1>
+            <h3>for an exponential world</h3>
+            <p><%= link_to 'Enter', videos_path, class: "btn-home btn-2" %></p>
+  </div>
+</header>
+
+<div class="layout"></div>
+
+<div class="footer">
+  <div class="footer-links">
+    <a href="#"><i class="fa fa-github"></i></a>
+    <a href="#"><i class="fa fa-instagram"></i></a>
+    <a href="#"><i class="fa fa-facebook"></i></a>
+    <a href="#"><i class="fa fa-twitter"></i></a>
+    <a href="#"><i class="fa fa-linkedin"></i></a>
+  </div>
+  <div class="footer-copyright">
+    This footer is made with <i class="fa fa-heart"></i> at Le Wagon
+  </div>
+</div>
+
+
+
+<style>
+  *{box-sizing: border-box;}
+
+.layout{
+  display:block;
+  position:relative;
+  background: #21212a;
+  height:90vh;
+}
+
+/* header */
+
+header {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background-size: cover;
+  background: rgba(0,0,0,0.7);
+}
+
+header .content{
+    position: relative;
+    display:inline-block;
+    top: 40%;
+    left: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    text-shadow: 0px 0px 5px rgba(0, 0, 0, 1);
+  }
+
+  header .content h1{
+    font-size: 3em;font-weight: normal;
+  }
+   header .content h3{
+    font-size:1.5em;font-weight: lighter;
+  }
+
+   header .content a{
+    font-family: 'Raleway', 'Helvetica', 'sans-serif';
+    color: #B7B8CE;
+  }
+
+  header .content a:hover{
+    font-family: 'Raleway', 'Helvetica', 'sans-serif';
+    color: #B7B8CE;
+  }
+
+.bg {
+  display:block;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: url('https://images.unsplash.com/photo-1443428018053-13da55589fed?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=1b35cc27d9893369c5f85d539765af84&auto=format&fit=crop&w=2550&q=80') center no-repeat;
+  background-size: cover;
+  -moz-transition: 0.1s;-o-transition: 0.1s;-webkit-transition: 0.1s;transition: 0.1s;
+  z-index: -1;
+}
+
+.footer {
+  background: #30333B;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 10vh;
+  padding: 0px 50px;
+  color: rgba(0,0,0,0.3);
+}
+.footer-links {
+  display: flex;
+  align-items: center;
+}
+.footer-links a {
+  color: black;
+  opacity: 0.15;
+  text-decoration: none;
+  font-size: 24px;
+  padding: 0px 10px;
+}
+.footer-links a:hover {
+  opacity: 1;
+}
+.footer .fa-heart {
+  color: #D23333;
+}
+
+</style>
+<script>
+  //PARALLAX
+
+$(window).scroll(function(){
+  parallax();
+});
+
+function parallax(){
+  var scrolled = $(window).scrollTop();
+  $('.bg').css('top',-(scrolled*0.1)+'px');
+  $('header .content').css('top',50+(scrolled*0.1)+'%');
+  $('header .content').css('opacity',1-(scrolled*0.01)/10);
+  $('header .content').css('opacity',1-(scrolled*0.01)/10);
+};
+</script>

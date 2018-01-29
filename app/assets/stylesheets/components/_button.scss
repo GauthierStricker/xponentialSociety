@@ -29,12 +29,12 @@
 .btn-2:hover,
 .btn-2:active {
   letter-spacing: 5px;
-  color: #fff;
+  color: #B7B8CE;
 }
 
 .btn-2:after,
 .btn-2:before {
-  border: 1px solid rgba(#fff, 0);
+  border: 1px solid rgba(#B7B8CE, 0);
   bottom: 0px;
   content: " ";
   display: block;
@@ -42,20 +42,20 @@
   position: relative;
   transition: all 280ms ease-in-out;
   width: 0;
-  color: #fff;
+  color: #B7B8CE;
 }
 
 .btn-2:hover:after,
 .btn-2:hover:before {
-  border-color: #fff;
+  border-color: #B7B8CE;
   transition: width 350ms ease-in-out;
   width: 70%;
-  color: #fff;
+  color: #B7B8CE;
 }
 
 .btn-2:hover:before {
   bottom: auto;
   top: 0;
   width: 70%;
-  color: #fff;
+  color: #B7B8CE;
 }

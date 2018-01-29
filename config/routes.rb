@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :topics, only: [:index, :show, :edit, :create, :new, :update]
   resources :speakers, only: [:edit, :create, :new, :update]
 
-  match '/contributes',     to: 'contributes#new', via: 'get'
+  get 'contributes', to: 'contributes#new', as: :contributes
   resources "contributes", only: [:new, :create]
+
 end
