@@ -17,6 +17,8 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 
+gem 'jquery-rails'
+
 gem 'cloudinary'
 gem 'pundit'
 gem 'carrierwave', '~> 1.2'

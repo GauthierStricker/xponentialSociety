@@ -1,0 +1,25 @@
+.modal-open .modal,.btn:focus,a:focus{
+    outline:none !important;
+}
+
+.modal-content {
+  background:#292c35;
+}
+
+.close {
+  	float: right !important;
+    margin-right: 5px !important;
+    margin-top: 8px !important;
+    background-color: #292c35 !important;
+    width: 30px !important;
+    height: 30px !important;
+    opacity: 1 !important;
+    outline:none !important;
+    color:#B7B8CE;
+	font-weight: 100;
+	font-size:18px;
+}
+
+.close:hover {
+	color:white;
+}
