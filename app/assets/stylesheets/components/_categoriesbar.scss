@@ -60,11 +60,21 @@
 #expand-categories {
   border-radius:50%;
   background: #353740;
-  width:21px;
-  height:21px;
+  width:20px;
+  height:20px;
   display:flex;
   align-items: center;
   justify-content:center;
+
+  .arrow-down {
+  margin-top:2px;
+  width: 0; 
+  height: 0; 
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  
+  border-top: 4px solid #B7B8CE;
+  }
 }
 
 #expand-categories:hover {
@@ -75,11 +85,21 @@
 #unexpand-categories {
   border-radius:50%;
   background: #353740;
-  width:21px;
-  height:21px;
+  width:20px;
+  height:20px;
   display:flex;
   align-items: center;
   justify-content:center;
+  
+  .arrow-up {
+  margin-botom:2px;
+  width: 0; 
+  height: 0; 
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  
+  border-bottom: 4px solid #B7B8CE;
+  }
 }
 
 #unexpand-categories:hover {

@@ -32,3 +32,13 @@
   padding-left:30px;
   padding-right: 30px;
 }
+
+@media(max-width: 767px) {
+  .content-area-container {
+    width: 100vw;
+  }
+
+  .content-area-header {
+    width:100vw;
+  }
+}

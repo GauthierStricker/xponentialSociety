@@ -1,4 +1,4 @@
-<div class="categories-bar-container">
+<div class="categories-bar-container hidden-xs">
   <p class="categories-bar-title">Topics</p>
   <div class="row">
     <div class="col-xs-12">
@@ -36,7 +36,11 @@
       <% end %>
       <% new_row_tracker += 1 %>
     <% end %>
-    <div class="centered-div"><p id="unexpand-categories">-</p></div>
+    <div class="centered-div">
+      <div id="unexpand-categories">
+        <div class="arrow-up"></div>
+      </div>
+    </div>
     <hr>
   </div>
 </div>
