@@ -29,10 +29,12 @@
             <h1>Curated Video Content</h1>
             <h3>for an exponential world</h3>
             <p><%= link_to 'Enter', videos_path, class: "btn-home btn-2" %></p>
+            <%= link_to "Open modal", videos_path, :class => "btn", "data-toggle" => "modal", "data-target" => ".bs-example-modal-lg" %>
   </div>
 </header>
 
-<div class="layout"></div>
+<div class="layout">
+</div>
 
 <div class="footer">
   <div class="footer-links">
@@ -142,6 +144,11 @@ header .content{
 
 $(window).scroll(function(){
   parallax();
+});
+
+$('a[data-modal]').click(function(event) {
+  $(this).modal();
+  return false;
 });
 
 function parallax(){

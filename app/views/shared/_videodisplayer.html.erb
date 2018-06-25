@@ -1,6 +1,7 @@
-<div class="content-area-container">
-  <div class="content-area-header" style="background-image: radial-gradient(ellipse at center, rgba(173,95,0,0.3) 0%, rgba(138,76,0,0.3) 50%), url('<%= asset_path "video-header.png"  %>');"></div>
-  <div class="video-displayer-area">
+<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <p>x</p>
+        </button>
+<div class="video-displayer-area">
     <div class="video-global-container">
       <% @video.topics.each do |topic| %>
         <div class="video-tag-top-information"><%= topic.name %></div>
@@ -10,7 +11,7 @@
       <br>
       <div class="video-container">
         <div class="videoWrapper">
-          <iframe src='https://www.youtube.com/embed/<%= @video.youtube_id %>?rel=0&autoplay=<%= params[:autoplay] || 0 %>' frameborder='0' allowfullscreen></iframe>
+          <iframe id ="current-video" src='https://www.youtube.com/embed/<%= @video.youtube_id %>?rel=0&autoplay=<%= params[:autoplay] || 0 %>' frameborder='0' allowfullscreen></iframe>
         </div>
       </div>
       <br>
@@ -19,19 +20,12 @@
         <p class="title"><%=@video.title%></p>
         <p><span class="format"><%=@video.format%></span>      ·      <%= @video.original_date %>      ·     <%= @video.language %></p>
         <p> <span class="format">Speaker</span> : <%= link_to @video.speaker.name, @video.speaker.biography_link, :target => "_blank" %> ·<span class="format">Original Publisher</span> : <%= link_to @video.publisher, @video.publisher_link, :target => "_blank" %></p>
-        <br>
-        <br>
-        <br>
-        <br>
       </div>
+      <br>
     </div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
   </div>
-</div>
+<script>
+  $(".close").click(function(){
+    $("iframe").remove();
+  });
+</script>

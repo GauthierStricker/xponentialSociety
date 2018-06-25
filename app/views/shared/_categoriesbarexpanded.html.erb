@@ -1,5 +1,4 @@
 <div class="categories-bar-container hidden-xs">
-  <p class="categories-bar-title">Topics</p>
   <div class="row">
     <div class="col-xs-12">
       <div class="categories-bar-card">
@@ -10,6 +9,7 @@
       </div>
     </div>
   </div>
+  <p class="categories-bar-title">Topics</p>
   <% @topics = Topic.all %>
     <% new_row_tracker = 0 %>
     <% @topics.each do |topic| %>
