@@ -10,10 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180121173600) do
+ActiveRecord::Schema.define(version: 20180626124254) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "sources", force: :cascade do |t|
+    t.string "host"
+    t.string "icon"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "speakers", force: :cascade do |t|
     t.string "name"
@@ -23,13 +30,21 @@ ActiveRecord::Schema.define(version: 20180121173600) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "speakers_videos", force: :cascade do |t|
+    t.bigint "speaker_id"
+    t.bigint "video_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["speaker_id"], name: "index_speakers_videos_on_speaker_id"
+    t.index ["video_id"], name: "index_speakers_videos_on_video_id"
+  end
+
   create_table "topics", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "icon_asset"
     t.string "short_name"
-    t.string "header_asset"
   end
 
   create_table "topics_videos", force: :cascade do |t|
@@ -39,13 +54,6 @@ ActiveRecord::Schema.define(version: 20180121173600) do
     t.datetime "updated_at", null: false
     t.index ["topic_id"], name: "index_topics_videos_on_topic_id"
     t.index ["video_id"], name: "index_topics_videos_on_video_id"
-  end
-
-  create_table "tracks", force: :cascade do |t|
-    t.string "name"
-    t.string "total_duration"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -70,25 +78,23 @@ ActiveRecord::Schema.define(version: 20180121173600) do
     t.string "title"
     t.string "duration"
     t.integer "rating"
-    t.string "source"
     t.string "publisher"
-    t.integer "views"
-    t.string "contributor"
-    t.string "added_date"
     t.string "language"
-    t.string "original_date"
+    t.date "original_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "photo"
-    t.string "link"
-    t.string "youtube_id"
-    t.bigint "speaker_id"
+    t.string "reference_link"
+    t.string "reference_key"
     t.string "format"
     t.string "publisher_link"
-    t.index ["speaker_id"], name: "index_videos_on_speaker_id"
+    t.bigint "source_id"
+    t.index ["source_id"], name: "index_videos_on_source_id"
   end
 
+  add_foreign_key "speakers_videos", "speakers"
+  add_foreign_key "speakers_videos", "videos"
   add_foreign_key "topics_videos", "topics"
   add_foreign_key "topics_videos", "videos"
-  add_foreign_key "videos", "speakers"
+  add_foreign_key "videos", "sources"
 end

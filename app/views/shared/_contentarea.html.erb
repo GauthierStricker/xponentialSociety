@@ -14,7 +14,7 @@
         <div class="video-card">
           <%= link_to video_path(@videos.first.id), "data-toggle" => "modal", "data-target" => ".bs-example-modal-lg" do %>
           <div class="video-card-cover-top" style="background-image:linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.75) 100%), url('<%= cl_image_path @videos.first.photo, height: 300, width: 400, crop: :fill %>')">
-            <p class="video-card-top-title"><%= @videos.first.title %>  |  <%= @videos.first.speaker.name %></p>
+            <p class="video-card-top-title"><%= @videos.first.title %>  |  <%= @videos.first.speakers.first.name %></p>
           </div>
           <% end %>
         </div>
@@ -27,7 +27,7 @@
             <div class="video-card-duration-box"><%= @videos[1].duration %></div>
           </div>
           <div class="video-card-sub">
-            <p class="video-card-sub-title"><%= @videos[1].title %>  |  <%= @videos[1].speaker.name %></p>
+            <p class="video-card-sub-title"><%= @videos[1].title %>  |  <%= @videos[1].speakers.first.name %></p>
           </div>
         <% end %>
         </div>
@@ -46,7 +46,7 @@
                   <div class="video-card-duration-box"><%= video.duration %></div>
                 </div>
                 <div class="video-card-sub">
-                  <p class="video-card-sub-title"><%= video.title %>  |  <%= video.speaker.name %></p>
+                  <p class="video-card-sub-title"><%= video.title %>  |  <%= video.speakers.first.name %></p>
                 </div>
                 <% end %>
               </div>
@@ -59,7 +59,7 @@
                   <div class="video-card-duration-box"><%= video.duration %></div>
                 </div>
                 <div class="video-card-sub">
-                  <p class="video-card-sub-title"><%= video.title %>  |  <%= video.speaker.name %></p>
+                  <p class="video-card-sub-title"><%= video.title %>  |  <%= video.speakers.first.name %></p>
                 </div>
                 <% end %>
               </div>
