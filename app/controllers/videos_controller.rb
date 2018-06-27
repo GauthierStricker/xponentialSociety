@@ -4,7 +4,13 @@ class VideosController < ApplicationController
     # @videos = Video.all
     # @videos = @videos.reverse
     # @topics = "Latest videos"
-    if params[:page] == "1"
+    if params[:query].present?
+      if params[:page] == "1"
+      @videos = Video.global_search(params[:query]).paginate(:page => params[:page], :per_page => 11).order('id DESC')
+      else
+      @videos = Video.global_search(params[:query]).paginate(:page => params[:page], :per_page => 12).order('id DESC')  
+      end
+    elsif params[:page] == "1"
       @videos = Video.paginate(:page => params[:page], :per_page => 11).order('id DESC')
     else
       @videos = Video.paginate(:page => params[:page], :per_page => 12).order('id DESC')
