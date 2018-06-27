@@ -16,6 +16,7 @@ gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
+gem 'will_paginate', '~> 3.1.1'
 
 gem 'jquery-rails'
 

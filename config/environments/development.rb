@@ -49,6 +49,8 @@ Rails.application.configure do
   # Suppress logger output for asset requests.
   config.assets.quiet = true
 
+  #Added this to not have precompiled assets used in dev env 
+  config.serve_static_assets = false
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 

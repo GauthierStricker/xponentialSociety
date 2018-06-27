@@ -6,7 +6,11 @@ class TopicsController < ApplicationController
   def show          # GET /topics/:id
     @topic = Topic.find(params[:id])
     @videos = @topic.videos
-    @videos = @videos.reverse
+    if params[:page] == "1"
+      @videos = @videos.paginate(:page => params[:page], :per_page => 11).order('id DESC')
+    else
+      @videos = @videos.paginate(:page => params[:page], :per_page => 12).order('id DESC')
+    end
   end
   def new           # GET /topics/new
     authorize Topic
