@@ -1,7 +1,9 @@
   <div class="content-area-container">
   <div class="content-area-header" style="background-image: radial-gradient(ellipse at center, rgba(173,95,0,0.3) 0%, rgba(138,76,0,0.3) 50%), url('<%= asset_path "main-header.png"  %>');">
   </div>
-    <br>
+    <div class="pagination-wrapper">
+      <%= will_paginate @videos, :outer_window => '1', :inner_window => '2', :previous_label => 'Previous', :next_label => 'Next' %>
+   </div>
   <div class="content-area-videos">    
     <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
       <div class="modal-dialog modal-lg">
@@ -9,7 +11,11 @@
         </div>
       </div>
     </div>
-    <div class="row">
+
+    <% new_row_tracker = 0 %>
+    <% @videos.each_with_index do |video, index|  %>
+      <% if index == 0 && ( params[:page] == "1" || params[:page] == nil ) %>
+        <div class="row">
       <div class="col-lg-8">
         <div class="video-card">
           <%= link_to video_path(@videos.first.id), "data-toggle" => "modal", "data-target" => ".bs-example-modal-lg" do %>
@@ -22,21 +28,19 @@
 
       <div class="col-lg-4">
         <div class="video-card">
-          <%= link_to video_path(@videos[1].id), "data-toggle" => "modal", "data-target" => ".bs-example-modal-lg" do %>
-          <div class="video-card-cover" style="background-image: url('<%= cl_image_path @videos[1].photo, height: 300, width: 400, crop: :fill %>');">
-            <div class="video-card-duration-box"><%= @videos[1].duration %></div>
+          <%= link_to video_path(@videos.second.id), "data-toggle" => "modal", "data-target" => ".bs-example-modal-lg" do %>
+          <div class="video-card-cover" style="background-image: url('<%= cl_image_path @videos.second.photo, height: 300, width: 400, crop: :fill %>');">
+            <div class="video-card-duration-box"><%= @videos.second.duration %></div>
           </div>
           <div class="video-card-sub">
-            <p class="video-card-sub-title"><%= @videos[1].title %>  |  <%= @videos[1].speakers.first.name %></p>
+            <p class="video-card-sub-title"><%= @videos.second.title %>  |  <%= @videos.second.speakers.first.name %></p>
           </div>
         <% end %>
         </div>
       </div>
     </div>
-
-    <% new_row_tracker = 0 %>
-    <% @videos.each_with_index do |video, index|  %>
-      <% unless index == 0 || index == 1  %>
+      <% end %>
+      <% unless ( index == 0 || index == 1 ) && params[:page] == "1" %>
         <% if (new_row_tracker % 3) == 0 %>
           <div class="row">
             <div class="col-lg-4">
@@ -73,6 +77,9 @@
       <% end %>
     <% end %>
   </div>
+ <div class="pagination-wrapper">
+      <%= will_paginate @videos, :outer_window => '1', :inner_window => '2', :previous_label => 'Previous', :next_label => 'Next' %>
+   </div>
 </div>
 
 <script>
