@@ -1,6 +1,22 @@
 <div class="categories-bar-container hidden-xs">
   <div class="row">
     <div class="col-xs-12">
+      <div class="search-wrapper">
+        <form action="/videos" accept-charset="UTF-8" method="get">
+          <input name="utf8" type="hidden" value="&#x2713;" />
+          <input type="text"
+                 name="query"
+                 id="query"
+                 value="<%= params[:query] %>"
+                 class="search-box"
+                 placeholder="Find a video" />
+          <input name="" class="search-btn" type="submit" value="" />
+        </form>
+      </div>
+  </div>
+</div>
+  <div class="row">
+    <div class="col-xs-12">
       <div class="categories-bar-card">
         <%= link_to videos_path do %>
           <%= image_tag "all-icon.png", class: "categories-bar-icon" %>

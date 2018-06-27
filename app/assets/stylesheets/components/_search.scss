@@ -1,0 +1,24 @@
+.search-wrapper {
+	width:100%;
+}
+.search-box {
+  display: inline-block;
+  width:100%;
+  background: #21212a;
+  margin-bottom: 20px;
+  height: 40px;
+  padding:0px;
+  border:none;
+  padding-left:10px;
+}
+
+.search-btn {
+background: url('/assets/search-icon.png');
+background-size:cover;
+position:absolute;
+top:8px;
+right:20px;
+width:24px;
+height:24px;
+border:none;
+}
