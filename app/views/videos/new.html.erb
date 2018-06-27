@@ -8,15 +8,14 @@
   <%= f.input :publisher, as: :string, label: 'Original Publisher - ex: Deloitte' %>
   <%= f.input :publisher_link, as: :string, label: 'Link - ex: Youtube channel, website, etc.' %>
   <%= f.association :topics, as: :check_boxes %>
-  <%= f.association :speaker %>
-  <%= f.input :source, as: :string, label: 'Source -ex: Youtube' %>
-  <%= f.input :contributor, as: :string %>
+  <%= f.association :speakers, as: :check_boxes %>
+  <%= f.association :source %>
   <%= f.input :language, as: :string, label: 'Language (in english)' %>
   <%= f.input :original_date, as: :string %>
   <%= f.input :photo, label: 'Photo Cover'%>
-  <%= f.input :youtube_id, as: :string, label: 'exemple : GusbUCKM9vI ' %>
+  <%= f.input :reference_key, as: :string, label: 'exemple : GusbUCKM9vI ' %>
   <%= f.input :format, as: :string, label: 'exemple : Conference ' %>
-  <%= f.input :link, label: 'exemple : https://www.youtube.com/embed/GusbUCKM9vI' %>
+  <%= f.input :reference_link, label: 'exemple : https://www.youtube.com/embed/GusbUCKM9vI' %>
   <%= f.submit "Create a new video", class: "btn btn-primary" %>
 <% end %>
 </div>

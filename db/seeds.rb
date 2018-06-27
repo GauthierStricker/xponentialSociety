@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-puts "seeding Topics"
+puts "seeding Speakers"
 
 
 #Speaker
@@ -17,13 +17,18 @@ puts "seeding Topics"
   speaker.biography_link = "https://en.wikipedia.org/wiki/Jason_Silva"
   speaker.remote_profile_picture_url = "https://upload.wikimedia.org/wikipedia/commons/b/b0/JasonSilva.jpg"
   speaker.save!
+
+  speaker = Speaker.new
+  speaker.name = "Elon Musk"
+  speaker.biography_link = "https://en.wikipedia.org/wiki/Elon_Musk"
+  speaker.remote_profile_picture_url = "https://upload.wikimedia.org/wikipedia/commons/b/b0/JasonSilva.jpg"
+  speaker.save!
 #AI
 
   topic = Topic.new
   topic.name = "Artificial Intelligence"
-  topic.icon_asset = "assets/images/ai-icon.png"
+  topic.icon_asset = "ai-icon.png"
   topic.short_name = "AI"
-  topic.header_asset = "ai-header.png"
   topic.save!
 
 #Crypto
@@ -32,7 +37,6 @@ puts "seeding Topics"
   topic.name = "Cryptocurrencies & Blockchain"
   topic.icon_asset = "crypto-icon.png"
   topic.short_name = "Crypto"
-  topic.header_asset = "crypto-header.png"
   topic.save!
 
 #Biotech
@@ -41,7 +45,6 @@ puts "seeding Topics"
   topic.name = "Biotechnology"
   topic.icon_asset = "biotech-icon.png"
   topic.short_name = "Biotech"
-  topic.header_asset = "biotech-header.png"
   topic.save!
 
 #Robotics
@@ -50,7 +53,6 @@ puts "seeding Topics"
   topic.name = "Robotics"
   topic.icon_asset = "robotics-icon.png"
   topic.short_name = "Robotics"
-  topic.header_asset = "robotics-header.png"
   topic.save!
 
 #3D-printing
@@ -59,7 +61,6 @@ puts "seeding Topics"
   topic.name = "Additive Manufacturing"
   topic.icon_asset = "3d-printing-icon.png"
   topic.short_name = "3D-Printing"
-  topic.header_asset = "3d-printing-header.png"
   topic.save!
 
 #Prospective
@@ -68,111 +69,93 @@ puts "seeding Topics"
   topic.name = "Prospective"
   topic.icon_asset = "prospective-icon.png"
   topic.short_name = "Prospective"
-  topic.header_asset = "prospective-header.png"
   topic.save!
 
 puts "Topics seeded"
 
+  source = Source.new
+  source.host = "Youtube"
+  source.icon = "youtube-icon.png"
+  source.save!
+
   video = Video.new
   video.title = "1st World Internet Conference"
   video.duration = "34:21"
-  video.rating = 4
-  video.source = ""
+  video.source = Source.find(1)
   video.publisher = "WEF"
-  video.views = 3
-  video.source = "youtube"
-  video.link = ""
-  video.youtube_id = "QN9UOkN-LWE"
+  video.publisher_link = ""
+  video.reference_link = ""
+  video.reference_key = "QN9UOkN-LWE"
   video.remote_photo_url = "https://qzprod.files.wordpress.com/2017/12/tim-cook-wuzhen.jpg"
   video.topics << Topic.find(1)
-  video.youtube_id = "QN9UOkN-LWE"
-  video.speaker = Speaker.find(1)
-  video.save
-
-  video = Video.new
-  video.title = "Not a video about AI"
-  video.duration = "23:22"
-  video.rating = 4
-  video.source = ""
-  video.publisher = "WEF"
-  video.views = 3
-  video.source = "youtube"
-  video.link = ""
-  video.youtube_id = "1C7XZbT-5jU"
-  video.remote_photo_url = "https://qzprod.files.wordpress.com/2017/12/tim-cook-wuzhen.jpg"
-  video.youtube_id = "QN9UOkN-LWE"
-  video.topics << Topic.find(1)
-  video.speaker = Speaker.find(1)
-  video.save
+  video.speakers << Speaker.find(1)
+  video.language = "French"
+  video.original_date = "May, 1st. 2018"
+  video.format = "Interview"
+  video.save!
 
   video = Video.new
   video.title = "2nd World Internet Conference"
-  video.duration = "36:23"
-  video.rating = 4
-  video.source = ""
+  video.duration = "34:21"
+  video.source = Source.find(1)
   video.publisher = "WEF"
-  video.views = 3
-  video.source = "youtube"
-  video.link = ""
+  video.publisher_link = ""
+  video.reference_link = ""
+  video.reference_key = "QN9UOkN-LWE"
   video.remote_photo_url = "https://qzprod.files.wordpress.com/2017/12/tim-cook-wuzhen.jpg"
   video.topics << Topic.find(1)
-  video.youtube_id = "QN9UOkN-LWE"
-  video.save
+  video.speakers << Speaker.find(1)
+  video.language = "French"
+  video.original_date = "May, 1st. 2018"
+  video.format = "Interview"
+  video.save!
 
   video = Video.new
-  video.title = "3th World Internet Conference"
-  video.duration = "37:23"
-  video.rating = 4
-  video.source = ""
+  video.title = "3rd World Internet Conference"
+  video.duration = "34:21"
+  video.source = Source.find(1)
   video.publisher = "WEF"
-  video.views = 3
-  video.source = "youtube"
-  video.link = ""
+  video.publisher_link = ""
+  video.reference_link = ""
+  video.reference_key = "QN9UOkN-LWE"
   video.remote_photo_url = "https://qzprod.files.wordpress.com/2017/12/tim-cook-wuzhen.jpg"
   video.topics << Topic.find(1)
-  video.youtube_id = "QN9UOkN-LWE"
-  video.save
+  video.speakers << Speaker.find(1)
+  video.language = "French"
+  video.original_date = "May, 1st. 2018"
+  video.format = "Interview"
+  video.save!
 
   video = Video.new
   video.title = "4th World Internet Conference"
-  video.duration = "45:32"
-  video.rating = 4
-  video.source = ""
+  video.duration = "34:21"
+  video.source = Source.find(1)
   video.publisher = "WEF"
-  video.views = 3
-  video.source = "youtube"
-  video.link = ""
+  video.publisher_link = ""
+  video.reference_link = ""
+  video.reference_key = "QN9UOkN-LWE"
   video.remote_photo_url = "https://qzprod.files.wordpress.com/2017/12/tim-cook-wuzhen.jpg"
-  video.topics << Topic.find(1)
-  video.youtube_id = "QN9UOkN-LWE"
-  video.save
+  video.topics << Topic.find(2)
+  video.speakers << Speaker.find(1)
+  video.language = "French"
+  video.original_date = "May, 1st. 2018"
+  video.format = "Interview"
+  video.save!
 
   video = Video.new
   video.title = "5th World Internet Conference"
-  video.duration = "31:22"
-  video.rating = 4
-  video.source = ""
+  video.duration = "34:21"
+  video.source = Source.find(1)
   video.publisher = "WEF"
-  video.views = 3
-  video.source = "youtube"
-  video.link = ""
+  video.publisher_link = ""
+  video.reference_link = ""
+  video.reference_key = "QN9UOkN-LWE"
   video.remote_photo_url = "https://qzprod.files.wordpress.com/2017/12/tim-cook-wuzhen.jpg"
-  video.topics << Topic.find(1)
-  video.youtube_id = "QN9UOkN-LWE"
-  video.save
-
-  video = Video.new
-  video.title = "6th World Internet Conference"
-  video.duration = "54:23"
-  video.rating = 4
-  video.source = ""
-  video.publisher = "WEF"
-  video.views = 3
-  video.source = "youtube"
-  video.link = ""
-  video.remote_photo_url = "https://qzprod.files.wordpress.com/2017/12/tim-cook-wuzhen.jpg"
-  video.topics << Topic.find(1)
-  video.youtube_id = "QN9UOkN-LWE"
-  video.save
+  video.topics << Topic.find(2)
+  video.speakers << Speaker.find(1)
+  video.language = "French"
+  video.original_date = "May, 1st. 2018"
+  video.format = "Interview"
+  video.save!
 
 puts "Videos seeded"

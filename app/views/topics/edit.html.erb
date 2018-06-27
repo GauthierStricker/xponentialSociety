@@ -8,9 +8,6 @@
   <%= f.input :name%>
   <%= f.input :short_name %>
   <%= f.input :icon_asset%>
-  <%= cl_image_tag @topic.icon_asset, height: 150, width: 150, alt: "Icon Asset"%>
-  <%= f.input :header_asset%>
-  <%= cl_image_tag @topic.header_asset, height: 150, width: 150, alt: "Header Asset"%>
   <%= f.submit "EDIT topic", class: "btn btn-primary" %>
 <% end %>
 </div>
