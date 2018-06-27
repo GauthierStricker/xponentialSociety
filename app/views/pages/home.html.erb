@@ -1,40 +1,13 @@
-<!-- <div class="banner">
-  <div class="banner-content">
-    <%= video_tag "video-home.mp4", autoplay: :autoplay, loop: :loop, mute: :mute, class: "video" %>
-    <div class="container">
-      <div class="row">
-          <div class="col-xs-12 col-sm-12 col-lg-12">
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <h1>Curated <strong>Video Content</strong></h1>
-            <h3>for an <strong>exponential</strong> world</h3>
-            <br>
-            <p><%= link_to 'Enter', videos_path, class: "btn-home btn-2" %></p>
-          </div>
-      </div>
-    </div>
-  </div>
-</div>
- -->
 <div class="bg"></div>
 <header>
-   <div class="content">
+   <div class="home-box">
             <%= image_tag "xponential-society-logo.png" %>
-            <h1>Curated Video Content</h1>
+            <h1>Curated Videos</h1>
             <h3>for an exponential world</h3>
+            <br>
             <p><%= link_to 'Enter', videos_path, class: "btn-home btn-2" %></p>
-            <%= link_to "Open modal", videos_path, :class => "btn", "data-toggle" => "modal", "data-target" => ".bs-example-modal-lg" %>
   </div>
 </header>
-
-<div class="layout">
-</div>
 
 <div class="footer">
   <div class="footer-links">
@@ -52,14 +25,14 @@
 
 
 <style>
-  *{box-sizing: border-box;}
+*{box-sizing: border-box;}
 
-.layout{
+/*.layout{
   display:block;
   position:relative;
   background: #21212a;
   height:90vh;
-}
+}*/
 
 /* header */
 
@@ -68,32 +41,36 @@ header {
   position: relative;
   overflow: hidden;
   background-size: cover;
-  background: rgba(0,0,0,0.7);
+  background: rgba(242,128,51,0.1);
+  display:flex;
+   align-items: center;
+  justify-content: center;
 }
 
-header .content{
-    position: relative;
+header .home-box{
     display:inline-block;
-    top: 40%;
-    left: 50%;
+    /*top: 40%;
+    left: 50%;*/
     text-align: center;
-    transform: translate(-50%, -50%);
-    text-shadow: 0px 0px 5px rgba(0, 0, 0, 1);
+    background:rgba(33, 33, 42, 0.8);
+    padding:50px;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,.2),0 1px 1px 0 rgba(0,0,0,.14),0 2px 1px -1px rgba(0,0,0,.12);
+    border-radius:4px;
   }
 
-  header .content h1{
-    font-size: 3em;font-weight: normal;
+  header .home-box h1{
+    font-size: 2.5em;font-weight: normal;
   }
-   header .content h3{
-    font-size:1.5em;font-weight: lighter;
+   header .home-box h3{
+    font-size:1.25em;font-weight: lighter;
   }
 
-   header .content a{
+   header .home-box a{
     font-family: 'Raleway', 'Helvetica', 'sans-serif';
     color: #B7B8CE;
   }
 
-  header .content a:hover{
+  header .home-box a:hover{
     font-family: 'Raleway', 'Helvetica', 'sans-serif';
     color: #B7B8CE;
   }
@@ -105,7 +82,7 @@ header .content{
   height: 100vh;
   top: 0;
   left: 0;
-  background: url('https://images.unsplash.com/photo-1443428018053-13da55589fed?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=1b35cc27d9893369c5f85d539765af84&auto=format&fit=crop&w=2550&q=80') center no-repeat;
+  background-image: url('/assets/sunrise-bg.png') ;
   background-size: cover;
   -moz-transition: 0.1s;-o-transition: 0.1s;-webkit-transition: 0.1s;transition: 0.1s;
   z-index: -1;
@@ -139,7 +116,7 @@ header .content{
 }
 
 </style>
-<script>
+<!-- <script>
   //PARALLAX
 
 $(window).scroll(function(){
@@ -158,4 +135,4 @@ function parallax(){
   $('header .content').css('opacity',1-(scrolled*0.01)/10);
   $('header .content').css('opacity',1-(scrolled*0.01)/10);
 };
-</script>
+</script> -->
