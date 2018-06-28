@@ -1,1 +1,63 @@
 // Specific CSS for your home-page
+*{box-sizing: border-box;}
+
+/*.layout{
+  display:block;
+  position:relative;
+  background: #21212a;
+  height:90vh;
+}*/
+
+/* header */
+
+header {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background-size: cover;
+  background: rgba(242,128,51,0.05);
+  display:flex;
+   align-items: center;
+  justify-content: center;
+}
+
+header .home-box{
+    display:inline-block;
+    /*top: 40%;
+    left: 50%;*/
+    text-align: center;
+    background:rgba(33, 33, 42, 0.8);
+    padding:50px;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,.2),0 1px 1px 0 rgba(0,0,0,.14),0 2px 1px -1px rgba(0,0,0,.12);
+    border-radius:4px;
+  }
+
+  header .home-box h1{
+    font-size: 2.5em;font-weight: normal;
+  }
+   header .home-box h3{
+    font-size:1.25em;font-weight: lighter;
+  }
+
+   header .home-box a{
+    font-family: 'Raleway', 'Helvetica', 'sans-serif';
+    color: #B7B8CE;
+  }
+
+  header .home-box a:hover{
+    font-family: 'Raleway', 'Helvetica', 'sans-serif';
+    color: #B7B8CE;
+  }
+
+.bg {
+  display:block;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-image: url('/assets/sunrise-bg.png') ;
+  background-size: cover;
+  -moz-transition: 0.1s;-o-transition: 0.1s;-webkit-transition: 0.1s;transition: 0.1s;
+  z-index: -1;
+}
