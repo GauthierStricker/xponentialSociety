@@ -1,4 +1,5 @@
 <div class="categories-bar-container hidden-xs">
+  <p class="categories-bar-title">Discover</p>
   <div class="row">
     <div class="col-xs-12">
       <div class="search-wrapper">
@@ -9,6 +10,7 @@
                  id="query"
                  value="<%= params[:query] %>"
                  class="search-box"
+                 autocomplete="off"
                  placeholder="Find a video" />
           <input name="" class="search-btn" type="submit" value="" />
         </form>
@@ -20,12 +22,23 @@
       <div class="categories-bar-card">
         <%= link_to videos_path do %>
           <%= image_tag "all-icon.png", class: "categories-bar-icon" %>
-          <p class="categories-bar-card-link">Latest Videos</p>
+          <p class="categories-bar-card-link">Latest videos</p>
         <% end %>
       </div>
     </div>
   </div>
-  <p class="categories-bar-title">Topics</p>
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="categories-bar-card">
+        <%= link_to random_videos_path, "data-toggle" => "modal", "data-target" => ".bs-example-modal-lg" do %>
+          <%= image_tag "random-icon.png", class: "categories-bar-icon" %>
+          <p class="categories-bar-card-link">Random video</p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <p class="categories-bar-title">Categories</p>
   <% @topics = Topic.first(4) %>
     <% new_row_tracker = 0 %>
     <% @topics.each do |topic| %>

@@ -21,6 +21,11 @@ class VideosController < ApplicationController
     @video = Video.find(params[:id])
   end
 
+  def random
+    random = rand(1..Video.count)
+    @video = Video.find(random)
+  end
+
   def new           # GET /videos/new
     authorize Video
     @video = Video.new
