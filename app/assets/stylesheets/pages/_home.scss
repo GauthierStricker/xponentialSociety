@@ -26,8 +26,8 @@ header .home-box{
     /*top: 40%;
     left: 50%;*/
     text-align: center;
-    background:rgba(33, 33, 42, 0.8);
-    padding:50px;
+    background:rgba(33, 33, 42, 0.9);
+    padding:70px 45px 30px 45px;
     box-shadow: 0 1px 3px 0 rgba(0,0,0,.2),0 1px 1px 0 rgba(0,0,0,.14),0 2px 1px -1px rgba(0,0,0,.12);
     border-radius:4px;
   }
@@ -60,4 +60,12 @@ header .home-box{
   background-size: cover;
   -moz-transition: 0.1s;-o-transition: 0.1s;-webkit-transition: 0.1s;transition: 0.1s;
   z-index: -1;
+}
+
+.home-box-header {
+  display:flex;
+}
+.home-box-logo {
+  height: 80px;
+  width:  80px;
 }

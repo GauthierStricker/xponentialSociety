@@ -2,7 +2,7 @@
   // display: flex;
   // justify-content: space-around;
   background: #21212a;
-  width: 80vw;
+  width: 75vw;
   right: 0;
   height: auto;
   min-height: 175vh;
@@ -29,8 +29,11 @@
 }
 
 .content-area-videos {
-  padding-left:30px;
-  padding-right: 30px;
+  padding-left:15px;
+  padding-right: 15px;
+  // FOR OLD CONTENT-AREA
+  // padding-left:30px;
+  // padding-right:30px;
 }
 
 @media(max-width: 767px) {

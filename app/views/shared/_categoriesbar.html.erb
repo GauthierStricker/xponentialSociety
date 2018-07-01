@@ -11,7 +11,7 @@
                  value="<%= params[:query] %>"
                  class="search-box"
                  autocomplete="off"
-                 placeholder="Find a video" />
+                 placeholder="Search" />
           <input name="" class="search-btn" type="submit" value="" />
         </form>
       </div>
@@ -27,7 +27,7 @@
       </div>
     </div>
   </div>
-  <div class="row">
+   <div class="row">
     <div class="col-xs-12">
       <div class="categories-bar-card">
         <%= link_to random_videos_path, "data-toggle" => "modal", "data-target" => ".bs-example-modal-lg" do %>
@@ -39,7 +39,7 @@
   </div>
   <hr>
   <p class="categories-bar-title">Categories</p>
-  <% @topics = Topic.first(4) %>
+  <% @topics = Topic.all %>
     <% new_row_tracker = 0 %>
     <% @topics.each do |topic| %>
       <% if new_row_tracker.even? %>
@@ -65,34 +65,6 @@
       <% end %>
       <% new_row_tracker += 1 %>
     <% end %>
-    <div class="centered-div">
-      <div id="expand-categories">
-        <div class="arrow-down"></div>
-      </div>
-    </div>
     <hr>
   </div>
 </div>
-<script>
-
-function unexpand() {
-const unexpandCategories = document.getElementById("unexpand-categories");
-  unexpandCategories.addEventListener("click", (event) => {
-    categories.innerHTML = content;
-    expand();
-});
-};
-
-function expand() {
-  const expandCategories = document.getElementById("expand-categories");
-  expandCategories.addEventListener("click", (event) => {
-    var categories = document.getElementById("categories");
-    content = categories.innerHTML
-    categories.innerHTML = "<%= j (render 'shared/categoriesbarexpanded') %>";
-    unexpand();
-});
-};
-
-expand();
-
-</script>

@@ -18,8 +18,8 @@
       <div class="video-sub-container">
         <div class="speaker-photo"><%= cl_image_tag @video.speakers.first.profile_picture, height: 150, width: 150, alt: "Speaker Photo"%></div>
         <p class="title"><%=@video.title%></p>
-        <p><span class="format"><%=@video.format%></span>      ·      <%= @video.original_date %>      ·     <%= @video.language %></p>
-        <p> <span class="format">Speaker</span> : <%= link_to @video.speakers.first.name, @video.speakers.first.biography_link, :target => "_blank" %> ·<span class="format">Original Publisher</span> : <%= link_to @video.publisher, @video.publisher_link, :target => "_blank" %></p>
+        <p><span class="format"><%=@video.format%></span>      ·      <%= @video.original_date %> ·     <%= @video.language %></p>
+        <p> <span class="format">Speaker</span> : <%= link_to @video.speakers.first.name, @video.speakers.first.biography_link, :target => "_blank" %>  ·<span class="format">Original Publisher</span> : <%= link_to @video.publisher, @video.publisher_link, :target => "_blank" %></p>
       </div>
       <br>
     </div>
