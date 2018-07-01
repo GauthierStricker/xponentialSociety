@@ -27,40 +27,39 @@
         </div>
       </div>
     </div>
-    <% if params[:query] != nil %>
-    <br>
-    <% end %>
+
+    <% new_row_tracker = 0 %>
     <% @videos.each_with_index do |video, index|  %>
       <% if index == 0 && ( params[:page] == "1" || params[:page] == nil ) %>
-            
-          <div class="col-md-8">
-            <div class="video-card">
-              <%= link_to video_path(@videos.first.id), "data-toggle" => "modal", "data-target" => ".bs-example-modal-lg" do %>
-              <div class="video-card-cover-top" style="background-image:linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.75) 100%), url('<%= cl_image_path @videos.first.photo, height: 300, width: 400, crop: :fill %>')">
-                <p class="video-card-top-title"><%= @videos.first.title %></p>
-              </div>
-              <% end %>
-            </div>
+        <div class="row">
+      <div class="col-md-8">
+        <div class="video-card">
+          <%= link_to video_path(@videos.first.id), "data-toggle" => "modal", "data-target" => ".bs-example-modal-lg" do %>
+          <div class="video-card-cover-top" style="background-image:linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.75) 100%), url('<%= cl_image_path @videos.first.photo, height: 300, width: 400, crop: :fill %>')">
+            <p class="video-card-top-title"><%= @videos.first.title %></p>
           </div>
+          <% end %>
+        </div>
+      </div>
 
-          <div class="col-md-4 col-sm-6">
-            <div class="video-card">
-              <%= link_to video_path(@videos.second.id), "data-toggle" => "modal", "data-target" => ".bs-example-modal-lg" do %>
-              <div class="video-card-cover" style="background-image: url('<%= cl_image_path @videos.second.photo, height: 300, width: 400, crop: :fill %>');">
-                <div class="video-card-duration-box"><%= @videos.second.duration %></div>
-              </div>
-              <div class="video-card-sub">
-                <p class="video-card-sub-title"><%= @videos.second.title %></p>
-              </div>
-            <% end %>
-            </div>
+      <div class="col-md-4">
+        <div class="video-card">
+          <%= link_to video_path(@videos.second.id), "data-toggle" => "modal", "data-target" => ".bs-example-modal-lg" do %>
+          <div class="video-card-cover" style="background-image: url('<%= cl_image_path @videos.second.photo, height: 300, width: 400, crop: :fill %>');">
+            <div class="video-card-duration-box"><%= @videos.second.duration %></div>
           </div>
-       
+          <div class="video-card-sub">
+            <p class="video-card-sub-title"><%= @videos.second.title %></p>
+          </div>
+        <% end %>
+        </div>
+      </div>
+    </div>
       <% end %>
-      <% unless ( index == 0 || index == 1 ) && (params[:page] == "1" || params[:page] == nil) %>
-   
-   
-            <div class="col-md-4 col-sm-6">
+      <% unless ( index == 0 || index == 1 ) && params[:page] == "1" %>
+        <% if (new_row_tracker % 3) == 0 %>
+          <div class="row">
+            <div class="col-md-4">
               <div class="video-card">
                 <%= link_to video_path(video.id), "data-toggle" => "modal", "data-target" => ".bs-example-modal-lg" do %>
                 <div class="video-card-cover" style="background-image: url('<%= cl_image_path video.photo, height: 300, width: 400, crop: :fill %>');">
@@ -72,11 +71,28 @@
                 <% end %>
               </div>
             </div>
-         
-
+        <% else %>
+            <div class="col-md-4">
+              <div class="video-card">
+                <%= link_to video_path(video.id), "data-toggle" => "modal", "data-target" => ".bs-example-modal-lg" do %>
+                <div class="video-card-cover" style="background-image: url('<%= cl_image_path video.photo, height: 300, width: 400, crop: :fill %>');">
+                  <div class="video-card-duration-box"><%= video.duration %></div>
+                </div>
+                <div class="video-card-sub">
+                  <p class="video-card-sub-title"><%= video.title %></p>
+                </div>
+                <% end %>
+              </div>
+            </div>
+          <% closing_div_tester = new_row_tracker + 1 %>
+          <% if (closing_div_tester % 3) == 0 %>
+          </div>
+          <% end  %>
+        <% end %>
+        <% new_row_tracker += 1 %>
       <% end %>
     <% end %>
-  </div>    
+  </div>
  <div class="pagination-wrapper">
       <%= will_paginate @videos, :outer_window => '1', :inner_window => '2', :previous_label => 'Previous', :next_label => 'Next' %>
    </div>

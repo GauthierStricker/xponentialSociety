@@ -10,7 +10,7 @@ class VideosController < ApplicationController
       else
       @videos = Video.global_search(params[:query]).paginate(:page => params[:page], :per_page => 12).order('id DESC')  
       end
-    elsif params[:page] == "1"
+    elsif params[:page] == "1" || params[:page] == nil
       @videos = Video.paginate(:page => params[:page], :per_page => 11).order('id DESC')
     else
       @videos = Video.paginate(:page => params[:page], :per_page => 12).order('id DESC')
@@ -68,6 +68,6 @@ class VideosController < ApplicationController
   private
 
   def video_params
-    params.require(:video).permit(:title, :duration, :publisher, :publisher_link, :speaker_ids, :source_id, :language, :reference_key, :reference_link, :format, :link, :photo, :original_date, :topic_ids => [])
+    params.require(:video).permit(:title, :duration, :publisher, :publisher_link, :source_id, :language, :reference_key, :reference_link, :format, :link, :photo, :original_date, :topic_ids => [], :speaker_ids => [])
   end
 end
