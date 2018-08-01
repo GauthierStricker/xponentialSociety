@@ -1,4 +1,4 @@
-class TopicsController < ApplicationController
+  class TopicsController < ApplicationController
   def index         # GET /topics
     @topics = Topic.all
   end
@@ -14,8 +14,7 @@ class TopicsController < ApplicationController
   end
   def new           # GET /topics/new
     authorize Topic
-    @topic = Topic.new
-
+    @topic = Topic.new  
   end
 
   def create        # POST /topics

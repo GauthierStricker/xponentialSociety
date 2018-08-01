@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.3.5'
+ruby '2.4.4'
 
 gem 'devise'
 gem 'figaro'
@@ -23,6 +23,8 @@ gem 'jquery-rails'
 gem 'cloudinary'
 gem 'pundit'
 gem 'carrierwave', '~> 1.2'
+
+gem 'dotenv-rails', groups: [:development, :test]
 
 gem "cocoon"
 
