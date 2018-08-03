@@ -32,7 +32,6 @@
     <% end %>
     <% @videos.each_with_index do |video, index|  %>
       <% if index == 0 && ( params[:page] == "1" || params[:page] == nil ) %>
-            
           <div class="col-md-8">
             <div class="video-card">
               <%= link_to video_path(@videos.first.id), "data-toggle" => "modal", "data-target" => ".bs-example-modal-lg" do %>
@@ -43,7 +42,7 @@
             </div>
           </div>
 
-          <div class="col-md-4 col-sm-6">
+          <div class="col-xs-6 col-md-4">
             <div class="video-card">
               <%= link_to video_path(@videos.second.id), "data-toggle" => "modal", "data-target" => ".bs-example-modal-lg" do %>
               <div class="video-card-cover" style="background-image: url('<%= cl_image_path @videos.second.photo, height: 300, width: 400, crop: :fill %>');">
@@ -60,7 +59,7 @@
       <% unless ( index == 0 || index == 1 ) && (params[:page] == "1" || params[:page] == nil) %>
    
    
-            <div class="col-md-4 col-sm-6">
+            <div class="col-xs-6 col-md-4">
               <div class="video-card">
                 <%= link_to video_path(video.id), "data-toggle" => "modal", "data-target" => ".bs-example-modal-lg" do %>
                 <div class="video-card-cover" style="background-image: url('<%= cl_image_path video.photo, height: 300, width: 400, crop: :fill %>');">
